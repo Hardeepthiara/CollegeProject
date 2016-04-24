@@ -1,0 +1,197 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Public-Library :: About</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!--<link href='http://fonts.googleapis.com/css?family=Quattrocento+Sans' rel='stylesheet' type='text/css'>-->
+<link href="{% static 'libsys/css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+<!--slider-->
+<link href="{% static 'libsys/css/slider.css' %}" rel="stylesheet" type="text/css" media="all"/>
+<script type="text/javascript" src="{% static 'libsys/js/jquery-1.9.0.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'libsys/js/jquery.nivo.slider.js' %}"></script>
+<script type="text/javascript">
+    $(window).load(function() {
+        $('#slider').nivoSlider();
+    });
+    </script>
+</head>
+<body>
+<div class="btm_border">
+<div class="h_bg">
+<div class="wrap">
+	<div class="header">
+		<div class="logo">
+			<h1><a href="index.html"><img src="{% static 'libsys/images/logo.png' %}" alt=""></a></h1>
+		</div>
+		<div class="social-icons">
+			<ul>
+			     <li><a class="facebook" href="https://www.facebook.com/?_rdr" target="_blank"> </a></li>
+			     <li><a class="twitter" href="https://twitter.com/?lang=en" target="_blank"></a></li>
+			     <li><a class="googleplus" href="https://plus.google.com/collections/featured" target="_blank"></a></li>
+			     
+		   </ul>
+		</div>	
+		<div class="clear"></div>
+	</div>
+	<div class='h_btm'>
+		<div class='cssmenu'>
+			<ul>
+			<li class='active'><a href="{% url 'index' %}"><span>Home</span></a></li>
+
+			<li><a href="/admin">Administration</a></li>
+
+			{%if user.is_authenticated %}
+				<li><a href="{% url 'logout' %}">Logout</a></li>
+			{% else %}
+				<li><a href="{% url 'register' %}">Register</a></li>
+				<li><a href="{% url 'login' %}">Login</a></li>
+				
+			{% endif %}
+
+
+			
+			<li><a href="{% url 'stu_list' %}">StudentList</a></li>
+			
+
+
+
+			   
+			    <li><a href="{% url 'about' %}"><span>About</span></a></li>
+			    
+			    <li class='has-sub'><a href="{% url 'service' %}"><span>Services</span></a></li>
+			    <li class='last'><a href="{% url 'contact' %}"><span>Contact</span></a></li>
+			 	<div class="clear"></div>
+			 </ul>
+	</div>
+	<div class="search">
+    	<form>
+    		<input type="text" value="">
+    		<input type="submit" value="">
+    	</form>
+	</div>
+	<div class="clear"></div>
+</div>
+</div>
+</div>
+</div>
+<!--main-->
+<div class="main_btm">
+<div class="wrap">
+<div class="main">
+	<div class="about-us">
+		<div class="about-header">
+			<h3>About Library Management System</h3>
+			<div class="clear"> </div>
+		</div>
+						<div class="about-info">
+							
+							<p>
+
+Library Management System is a software used to manages the catalog of a library.  This helps to keep the records of whole transactions of the books available in the library.
+
+AmpleTrails provides Library Management System which is very easy to use and fulfills all the requirement of a librarian. There are many features which helps librarian to keep records of available books as well as issued books. This software is available in both mode i.e. web-based or local host based.  We provide best Library Management System of this planet.
+
+Here is a list of some features of Library Management System which AmpleTrails offer:
+
+    Keep record of different categories like; Books, Journals, Newspapers, Magazines, etc.
+    Classify the books subject wise.
+    Easy way to enter new books.
+    Keep record of complete information of a book like; Book name, Author name, Publisher’s name, Date/ Year of publication, Cost of the book, Book purchasing date/ Bill no.
+    Easy way to make a check-out.
+    Easy way to make a check-in.
+    Automatic fine calculation for late returns.
+    Different criteria for searching a book.
+    Different kind of reports like; total no. of books, no. of issued books, no. of journals, etc.
+    Easy way to know how many books are issued to a particular student.
+    Easy way to know the status of a book.
+    Event calendar for librarian to remember their dates.
+    My Notes section for librarian to write any note.
+    Online access for registered user to see the status of their books.
+    Completely cloud based Library Management System.
+    No need to invest heavily on Hardware.
+    SAAS based pricing.
+    and much more.</p>
+
+						</div>
+					<div class="specials">
+					<div class="specials-heading">
+						
+						<div class="clear"> </div>
+					</div>
+					<div class="clear"> </div>
+					<div class="specials-grids">
+						<div class="special-grid">
+							<img src="{% static 'libsys/images/pic2.jpg' %}" title="image-name">
+							
+						</div>
+						<div class="special-grid">
+							<img src="{% static 'libsys/images/pic3.jpg' %}" title="image-name">
+							
+						</div>
+						<div class="special-grid spe-grid">
+							<img src="{% static 'libsys/images/pic4.jpg' %}" title="image-name">
+							
+						</div>
+						<div class="clear"> </div>
+					</div>
+					<div class="clear"> </div>
+					</div>
+		 	<!---End-about---->
+		 </div>
+	</div>
+</div>
+</div>
+<!--footer-->
+<div class="footer-bg">	
+<div class="wrap">
+<div class="footer">
+  <div class="box1">
+	<h4 class="btm">What We Do</h4>
+	<p>Different criteria for searching a book.
+Different kind of reports like; total no. of books, no. of issued books, no. of journals, etc.
+Easy way to know how many books are issued to a particular student.
+Easy way to know the status of a book.</p>
+	
+  </div>
+   <div class="box1">
+	<h4 class="btm">Categories</h4>
+	<nav>
+		<ul>
+			<li><a href="{% url 'stu_list' %}">StudentList</a></li><br>
+			<li><a href="{% url 'about' %}"><span>About</span></a></li><br>
+			 <li class='has-sub'><a href="{% url 'service' %}"><span>Services</span></a></li><br>
+			    <li class='last'><a href="{% url 'contact' %}"><span>Contact</span></a></li>
+	    </ul>
+	</nav>
+	</div>
+	<div class="box1">
+		<h4 class="btm">Get in touch</h4>
+		<div class="box1_address">
+			<p>BCA VIth Sem.</p>
+			
+			<p>India</p>
+			<p>Phone:9876543210</p>
+			<p></p>
+			<p>Email: <span>Bobbybandhan22@gmail.com</span><br><span>Gagandip.rbim@gmail.com</span><br><span>hardeepthiar@gmail.com</span></p>
+			
+		</div>
+	</div>
+	<div class="clear"></div>			
+</div>
+</div>
+</div>
+<!--footer1-->
+<div class="ftr-bg">
+	<div class="wrap">
+		<div class="footer">
+		<div class="copy">
+			<p class="w3-link">© All Rights Reserved | Design by&nbsp; <a href="#"> BCA VI Sem</a></p>
+		</div>
+		<div class="clear"></div>	
+	</div>
+	</div>
+</div>
+</body>
+</html>

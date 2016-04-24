@@ -1,0 +1,25 @@
+{% extends 'libsys/LLLL.html' %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-md-3"><strong>Reg No.</strong></div>
+		<div class="col-md-9">{{ object.regno }}</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-3"><strong>Account no</strong></div>
+		<div class="col-md-9">{{ object.accno }}</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-3"><strong>Date of Return</strong></div>
+		<div class="col-md-9">{{ object.date_of_return }}</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3"><a href="{% url 'return' %}">Return to list</a>
+		</div>
+		
+	</div>
+
+{% endblock %}
+

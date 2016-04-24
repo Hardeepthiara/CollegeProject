@@ -1,0 +1,42 @@
+{% extends 'libsys/LLLL.html' %}
+
+{% block content %}
+	{% for Book in object_list %}
+	<div class="col-md-12">
+		<a href="{% url 'book_detail' Book.pk %}">
+			
+			{{ Book.accno }}
+			{{ Book.title }}
+
+			
+
+		</a>
+	</div>
+
+
+	<div class="col-md-12">
+		<a href="{% url 'book_update' Book.pk %}">
+			<button>Update</button>
+		</a>
+	</div>
+
+
+	<div class="col-md-2">
+		<form action="{% url 'book_delete' Book.pk %}" method="post" accept-charset="utf-8">
+			{% csrf_token %}
+    		<input type="submit" value="Delete" />
+		</form>
+	</div>
+
+
+	
+	{% endfor %}
+<div class="col-md-12">
+		<a href="{% url 'book_create' %}">
+			Submit Books list
+		</a>
+	</div>
+
+
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'libsys/LLLL.html' %}
+
+{% block content %}
+	{% for Issue in object_list %}
+	<div class="col-md-12">
+		<a href="{% url 'issue_detail' Issue.pk %}">
+			{{ Issue.regno }}
+			{{ Issue.accno }}
+			{{ Issue.date_of_issue }}
+
+			
+
+		</a>
+	</div>
+
+
+	<div class="col-md-12">
+		<a href="{% url 'issue_update' Issue.pk %}">
+			<button>Update</button>
+		</a>
+	</div>
+
+
+	<div class="col-md-2">
+		<form action="{% url 'issue_delete' Issue.pk %}" method="post" accept-charset="utf-8">
+			{% csrf_token %}
+    		<input type="submit" value="Delete" />
+		</form>
+	</div>
+
+
+	
+
+	{% endfor %}
+	<div class="col-md-12">
+		<a href="{% url 'issue_create' %}">
+			Submit Issue Books list
+		</a>
+	</div>
+
+
+
+
+{% endblock %}

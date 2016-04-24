@@ -1,0 +1,19 @@
+{% extends 'libsys/LLLL.html' %}
+
+{% block content %}
+	<div class="row">
+		<div class="col-md-3"><strong>Accno.</strong></div>
+		<div class="col-md-9">{{ object.accno }}</div>
+	</div>
+
+	<div class="row">
+		<div class="col-md-3"><strong>Title</strong></div>
+		<div class="col-md-9">{{ object.title }}</div>
+	</div>
+	<div class="row">
+		<div class="col-md-3"><a href="{% url 'books' %}">Return to list</a>
+		</div>
+		
+	</div>
+
+{% endblock %}

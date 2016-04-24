@@ -1,0 +1,45 @@
+{% extends 'libsys/LLLL.html' %}
+
+{% block content %}
+	{% for Fine in object_list %}
+	<div class="col-md-12">
+		<a href="{% url 'fine_detail' Fine.pk %}">
+		
+			{{ Fine.regno }}
+			{{ Fine.accno }}
+			{{ Fine.fine }}
+
+			
+
+		</a>
+	</div>
+
+
+	<div class="col-md-12">
+		<a href="{% url 'fine_update' Fine.pk %}">
+			<button>Update</button>
+		</a>
+	</div>
+
+
+	<div class="col-md-2">
+		<form action="{% url 'fine_delete' Fine.pk %}" method="post" accept-charset="utf-8">
+			{% csrf_token %}
+    		<input type="submit" value="Delete" />
+		</form>
+	</div>
+
+	
+
+
+	{% endfor %}
+	<div class="col-md-12">
+		<a href="{% url 'fine_create' %}">
+			Submit Books list
+		</a>
+	</div>
+
+
+
+
+{% endblock %}

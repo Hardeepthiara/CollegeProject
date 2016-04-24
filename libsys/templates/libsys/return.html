@@ -1,0 +1,43 @@
+{% extends 'libsys/LLLL.html' %}
+
+
+
+{% block content %}
+	{% for Return in object_list %}
+	<div class="col-md-12">
+		<a href="{% url 'return_detail' Return.pk %}">
+			{{ Return.regno }}
+			{{ Return.accno }}
+			{{ Return.date_of_return }}
+
+		</a>
+	</div>
+
+
+	<div class="col-md-12">
+		<a href="{% url 'return_update' Return.pk %}">
+			<button>Update</button>
+		</a>
+	</div>
+
+
+	<div class="col-md-2">
+		<form action="{% url 'return_delete' Return.pk %}" method="post" accept-charset="utf-8">
+			{% csrf_token %}
+    		<input type="submit" value="Delete" />
+		</form>
+	</div>
+
+	<div class="col-md-12">
+		<a href="{% url 'return_create' %}">
+			Submit Books list
+		</a>
+	</div>
+
+
+	{% endfor %}
+
+
+
+
+{% endblock %}
